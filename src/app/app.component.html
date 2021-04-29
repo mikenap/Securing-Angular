@@ -1,0 +1,20 @@
+<nav>
+    <mat-toolbar color="primary">
+        <a href="/">
+            <span>
+                <img src="/assets/images/Globo_logo.png" alt="Globomantics" title="Globomantics" class="globo-logo">
+            </span>
+        </a>
+        <span class="navbar-fill">
+            <button mat-button *ngIf="isLoggedIn" routerLink="/projects">My Projects</button>
+            <button mat-button *ngIf="isAdmin()" routerLink="/admin">Manage Projects</button>
+        </span>
+        <span>
+            <button mat-button *ngIf="!isLoggedIn" (click)="login()">Login</button>
+            <button mat-button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+        </span>
+    </mat-toolbar>
+</nav>
+<div>
+<router-outlet></router-outlet>
+</div>
